@@ -63,7 +63,11 @@
                         <th>Name</th>
                         <th>World</th>
                         <th>Route</th>
-                        <th>Lead-In</th>
+                        <th>Lead</th>
+                        <th>Route + Lead In</th>
+                        <th>Landmarks</th>
+                        <th>Sprints</th>
+                        <th>(K/Q)OMs</th>
                         <th>Maps</th>
                     </tr>
                 </thead>
@@ -73,6 +77,20 @@
                         <td><span data-bind="text: world"></span></td>
                         <td><span data-bind="text: route.Distance.Miles"></span> miles</td>
                         <td><span data-bind="text: leadIn.Distance.Miles"></span> miles</td>
+                        <td><span data-bind="text: total.Distance.Miles"></span> miles</td>
+                        <td>Landmarks</td>
+                        <td>
+                            <ul class="list-group">
+                                <li class="list-group-item">Fuego Flats (0.2 mi / 1 ft)</li>
+                                <li class="list-group-item">Fuego Flats (0.2 mi / 1 ft)</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="list-group">
+                                <li class="list-group-item">Fuego Flats (0.2 mi / 1 ft)</li>
+                                <li class="list-group-item">Fuego Flats (0.2 mi / 1 ft)</li>
+                            </ul>
+                        </td>
                         <td><button type="button" class="btn btn-secondary" data-bind="click: viewMaps">View</button></td>
                     </tr>
                 </tbody>

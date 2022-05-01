@@ -9,6 +9,7 @@ jQuery(function() {
         self.world = obj.World;
         self.route = obj.Route;
         self.leadIn = obj.LeadIn;
+        self.total = obj.RoutePlusLeadIn;
         self.map = obj.Map;
         self.elevationProfile = obj.ElevationProfile;
 
