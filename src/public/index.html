@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Zwift Routes</title>
+        <link rel="stylesheet" type="text/css" href="css/lib/bootstrap-5.3.1.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/site.css"/>
+        <link rel="shortcut icon" href="favicon.png" />
+    </head>
+    <body class="h-100" id="application">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-zwift">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Zwift Routes</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li> -->
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+
+            <div class="alert alert-dark" role="alert">
+                Welcome to Zwift Routes! We are happy to have you here. As you can see, we are still getting things together so please check back to see more routes and new features.
+            </div>
+
+            <!-- <select class="form-control mb-3">
+                <option>Imperial</option>
+                <option>Metric</option>
+            </select> -->
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>World</th>
+                        <th>Route</th>
+                        <th>Lead-In</th>
+                        <th>Maps</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: routes">
+                    <tr>
+                        <td><span data-bind="text: routeName"></span></td>
+                        <td><span data-bind="text: world"></span></td>
+                        <td><span data-bind="text: route.Distance.Miles"></span> miles</td>
+                        <td><span data-bind="text: leadIn.Distance.Miles"></span> miles</td>
+                        <td><button type="button" class="btn btn-secondary" data-bind="click: viewMaps">View</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Zwift Routes is an independent of Zwift. We are here to help aggregate information to make it more readily accessible for those of you wanting to know more about Zwift.</p>
+            <p>We use images from Zwift for informational purposes only.</p>
+            <p>Our privacy policy is simple. We do not collect any information about visitors to our site.</p>
+        </div>
+
+        <div class="modal" tabindex="-1" id="mapModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" data-bind="with: currentRoute">
+                    <div class="modal-header">
+                        <h5 class="modal-title"><span data-bind="text: routeName"></span></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <h4>Route Map</h4>
+                        <img src="" class="img-fluid" data-bind="attr: {src: map}">
+                        <hr/>
+                        <h4>Elevation Profile</h4>
+                        <img src="" class="img-fluid" data-bind="attr: {src: elevationProfile}">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+
+        <script type="text/javascript" src="js/lib/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="js/lib/bootstrap.bundle-5.3.1.min.js"></script>
+        <script type="text/javascript" src="js/lib/knockout-3.5.0.min.js"></script>
+        <script type="text/javascript" src="js/pubSub.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
