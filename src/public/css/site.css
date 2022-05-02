@@ -1,7 +1,12 @@
-body {
-    background-color: #eeeeee;
-}
-
 .bg-zwift {
     background-color: rgb(251, 102, 24);
+}
+
+.route-title {
+    cursor: pointer;
+}
+
+.route-title:hover {
+    background-color: #ccc;
+    border-radius: 3px;
 }

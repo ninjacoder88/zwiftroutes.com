@@ -9,6 +9,9 @@ const pubsub = (function(){
             queues[messageName].push(callback);
         },
         publish: function(messageName, message){
+            if(queues[messageName] === undefined){
+                queues[messageName] = [];
+            }
             queues[messageName].forEach(cb => {
                 cb(message);
             });
