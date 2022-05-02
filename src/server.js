@@ -4,10 +4,6 @@ const { MongoClient } = require("mongodb");
 const app = express();
 const port = 3000;
 
-// app.get("/", (req, res) => {
-//     res.send("Hello");
-// });
-
 app.get("/routes", (req, res) => {
     try {
         const client = new MongoClient("mongodb://host.docker.internal/?readPreference=primary&appname=ZwiftRoutes&ssl=false");
@@ -19,6 +15,15 @@ app.get("/routes", (req, res) => {
                 const cursor = collection.find({});
                 return cursor.toArray();
             }).then(routes => {
+                routes.sort((a,b) => {
+                    if(a.routeName < b.routeName){
+                        return -1;
+                    }
+                    if(b.routeName > b.routeName){
+                        return 1;
+                    }
+                    return 0;
+                })
                 res.send(routes);
             }).catch(error => {
                 console.log(error);
