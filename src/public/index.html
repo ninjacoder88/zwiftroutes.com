@@ -49,15 +49,11 @@
         <div class="container">
 
             <div class="alert alert-dark mt-3" role="alert">
-                Welcome to Zwift Routes! We are happy to have you here. As you can see, we are still getting things together so please check back to see more routes and new features.
+                Welcome to Zwift Routes! We are happy to have you here. As you can see, we are still getting things together so please check back to see more routes and new features.<br/>
+                Last Update: 2022-05-01
             </div>
 
             <select class="form-control mb-2 mt-2" data-bind="options: measurementSystems, optionsText: 'systemName', value: selectedSystem"></select>
-
-            <p>Last Update: 2022-05-01</p>
-
-            
-
             <div data-bind="foreach: routes">
                 <div class="card bg-light text-dark mb-3">
                     <div class="card-header">
@@ -119,7 +115,9 @@
                 </div>
             </div>
 
-            <div class="row">
+            <hr/>
+
+            <!-- <div class="row">
                 <div class="col-md-2">Route Name</div>
                 <div class="col-md-1">World</div>
                 <div class="col-md-1">Route</div>
@@ -232,7 +230,7 @@
                         <td><button type="button" class="btn btn-secondary" data-bind="click: viewMaps">View</button></td>
                     </tr>
                 </tbody>
-            </table>
+            </table> -->
 
             <p>Zwift Routes is an independent of Zwift. We are here to help aggregate information to make it more readily accessible for those of you wanting to know more about Zwift.</p>
             <p>We use images from Zwift for informational purposes only.</p>
