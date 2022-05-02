@@ -1,17 +1,15 @@
 jQuery(function() {
     "use strict";
 
-    let currentRoute = undefined;
-
     function Route(obj){
         const self = this;
-        self.routeName = obj.RouteName;
-        self.world = obj.World;
-        self.route = obj.Route;
-        self.leadIn = obj.LeadIn;
-        self.total = obj.RoutePlusLeadIn;
-        self.map = obj.Map;
-        self.elevationProfile = obj.ElevationProfile;
+        self.routeName = obj.routeName;
+        self.world = obj.world;
+        self.route = obj.route;
+        self.leadIn = obj.leadIn;
+        self.total = obj.routePlusLeadIn;
+        self.map = obj.map;
+        self.elevationProfile = obj.elevationProfile;
 
         self.viewMaps = function(){
             pubsub.publish("map-selected", self);

@@ -38,17 +38,17 @@
                             <a class="nav-link disabled">Disabled</a>
                         </li> -->
                     </ul>
-                    <form class="d-flex">
+                    <!-- <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </nav>
 
         <div class="container">
 
-            <div class="alert alert-dark" role="alert">
+            <div class="alert alert-dark mt-3" role="alert">
                 Welcome to Zwift Routes! We are happy to have you here. As you can see, we are still getting things together so please check back to see more routes and new features.
             </div>
 
@@ -57,15 +57,15 @@
                 <option>Metric</option>
             </select> -->
 
+            <p>Last Update: 2022-05-01</p>
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>Name</th>
                         <th>World</th>
                         <th>Route</th>
-                        <th>Lead</th>
+                        <th>Lead In</th>
                         <th>Route + Lead In</th>
-                        <th>Landmarks</th>
                         <th>Sprints</th>
                         <th>(K/Q)OMs</th>
                         <th>Maps</th>
@@ -75,22 +75,11 @@
                     <tr>
                         <td><span data-bind="text: routeName"></span></td>
                         <td><span data-bind="text: world"></span></td>
-                        <td><span data-bind="text: route.Distance.Miles"></span> miles</td>
-                        <td><span data-bind="text: leadIn.Distance.Miles"></span> miles</td>
-                        <td><span data-bind="text: total.Distance.Miles"></span> miles</td>
-                        <td>Landmarks</td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item">Fuego Flats (0.2 mi / 1 ft)</li>
-                                <li class="list-group-item">Fuego Flats (0.2 mi / 1 ft)</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul class="list-group">
-                                <li class="list-group-item">Fuego Flats (0.2 mi / 1 ft)</li>
-                                <li class="list-group-item">Fuego Flats (0.2 mi / 1 ft)</li>
-                            </ul>
-                        </td>
+                        <td><span data-bind="text: route.distance.miles"></span> miles</td>
+                        <td><span data-bind="text: leadIn.distance.miles"></span> miles</td>
+                        <td><span data-bind="text: total.distance.miles"></span> miles</td>
+                        <td>Coming Soon</td>
+                        <td>Coming Soon</td>
                         <td><button type="button" class="btn btn-secondary" data-bind="click: viewMaps">View</button></td>
                     </tr>
                 </tbody>
