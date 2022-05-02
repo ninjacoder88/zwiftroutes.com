@@ -6,7 +6,7 @@ const port = 3000;
 
 app.get("/routes", (req, res) => {
     try {
-        const client = new MongoClient("mongodb://host.docker.internal/?readPreference=primary&appname=ZwiftRoutes&ssl=false");
+        const client = new MongoClient(process.env.CUSTOMCONNSTR_MongoDbAtlas);
 
         client.connect()
             .then(() => {
