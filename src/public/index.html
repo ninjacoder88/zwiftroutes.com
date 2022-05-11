@@ -20,23 +20,6 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled">Disabled</a>
-                        </li> -->
                     </ul>
                     <!-- <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -50,18 +33,18 @@
 
             <div class="alert alert-dark mt-3" role="alert">
                 Welcome to Zwift Routes! We are happy to have you here. As you can see, we are still getting things together so please check back to see more routes and new features.<br/>
-                Last Update: 2022-05-01
+                Last Update: 2022-05-10
             </div>
 
             <select class="form-control mb-2 mt-2" data-bind="options: measurementSystems, optionsText: 'systemName', value: selectedSystem"></select>
 
-            <div class="input-group mb-3">
+            <div class="input-group">
                 <span class="input-group-text">Sort</span>
                 <select class="form-control" data-bind="options: dataFields, optionsText: 'fieldName', value: firstSortField, optionsCaption: 'Choose...'"></select>
                 <select class="form-control" data-bind="options: firstSortOptions, optionsText: 'optionName', value: firstSortOption, optionsCaption: 'Choose...'"></select>
             </div>
-            
-            <button type="button" class="btn btn-success" data-bind="click: sortAndFilter">Sort and Filter</button>
+
+            <button type="button" class="btn btn-success mb-3" data-bind="click: sortAndFilter">Sort and Filter</button>
 
             <div data-bind="foreach: routes">
                 <div class="card bg-light text-dark mb-3">
