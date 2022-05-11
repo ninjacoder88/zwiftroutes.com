@@ -34,6 +34,35 @@ jQuery(function() {
             return self.selectedSystem().id === 2;
         });
 
+        self.dataFields = [
+            {id: 1, fieldName: "route-distance", fieldOptions: [{id: 1, optionName: 'high-to-low'}, {id: 2, optionName: 'low-to-high'}]},
+            {id: 2, fieldName: "route-elevation", fieldOptions: [{id: 1, optionName: 'high-to-low'}, {id: 2, optionName: 'low-to-high'}]},
+            {id: 3, fieldName: "route-dist-per-elev", fieldOptions: [{id: 1, optionName: 'high-to-low'}, {id: 2, optionName: 'low-to-high'}]},
+            {id: 4, fieldName: "world", fieldOptions: [{id: 1, optionName: 'a-to-z'}, {id: 2, optionName: 'z-to-a'}]},
+            {id: 5, fieldName: "route-name", fieldOptions: [{id: 1, optionName: 'a-to-z'}, {id: 2, optionName: 'z-to-a'}]}
+        ];
+
+        self.firstSortField = ko.observable();
+        self.firstSortOptions = ko.computed(function(){
+            if(self.firstSortField() === undefined){
+                return [];
+            }
+            return self.firstSortField().fieldOptions;
+        });
+        self.firstSortOption = ko.observable();
+
+        self.sortAndFilter = function(){
+            console.log(self.firstSortField());
+            console.log(self.firstSortOption());
+
+            const sortParameters =[
+                {fieldName: self.firstSortField().fieldName, sortOption: self.firstSortOption().optionName}
+            ];
+
+            const sortedRoutes = sorter.sort(self.routes(), sortParameters);
+            self.routes(sortedRoutes);
+        };
+
         pubsub.subscribe("map-selected", (message) => {
             self.currentRoute(message);
         });
